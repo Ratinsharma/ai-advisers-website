@@ -1,0 +1,9 @@
+# AI Advisers — https://aiadvisers.io
+# Founder-led AI consultancy, Dublin. Public, no authenticated areas.
+
+User-agent: *
+Allow: /
+
+# No crawl-delay set. Crawlers are welcome; the site is small and static-cached.
+
+Sitemap: https://aiadvisers.io/sitemap.xml

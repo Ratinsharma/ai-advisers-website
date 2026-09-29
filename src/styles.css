@@ -1,0 +1,563 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,30..100,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AI ADVISERS — v3 "Cabinet" design system.
+ * Brief: Stripe restraint + Aesop editorial + Peter Thiel contrarian positioning.
+ * Parchment surface, warm ink, single terracotta accent.
+ * Two typefaces. Hairlines. Whitespace is structural.
+ */
+
+@theme inline {
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius: 3px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-terracotta: var(--terracotta);
+  --color-subtle: var(--subtle);
+
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "Fraunces", "Times New Roman", serif;
+
+  --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+:root {
+  /* v3 palette — warm parchment + ink + single terracotta accent */
+  --background: #f5f1e8; /* warm parchment */
+  --foreground: #1f1b16; /* warm near-black */
+
+  --surface: #fbf8ef; /* paper white */
+  --surface-2: #ede7d8; /* darker parchment */
+
+  --card: #fbf8ef;
+  --card-foreground: #1f1b16;
+  --popover: #fbf8ef;
+  --popover-foreground: #1f1b16;
+
+  /* Ink is the default "primary" action color (button backgrounds, headings) */
+  --primary: #1f1b16;
+  --primary-foreground: #f5f1e8;
+
+  --secondary: #ede7d8;
+  --secondary-foreground: #1f1b16;
+
+  --muted: #ede7d8;
+  --muted-foreground: #5c5347;
+  --subtle: #6c675e; /* WCAG AA 4.98:1 on parchment (was #9F988A at 2.32:1) */
+
+  --accent: #ede7d8;
+  --accent-foreground: #1f1b16;
+
+  /* Terracotta — single saturated accent. Used sparingly. */
+  --terracotta: #b2451c; /* WCAG AA 4.95:1 as text (was #B5461C at 4.41:1) */
+  --terracotta-soft: #e8836a; /* accent on ink sections; raised for 4.5:1 on #1F1B16 */
+
+  --destructive: #8c2a1a;
+  --destructive-foreground: #f5f1e8;
+
+  --border: #b5ac9b; /* decorative rules only, 1.99:1 — see --border-strong */
+  --border-strong: #7c7768; /* WCAG 1.4.11 boundary for controls, 3.97:1 */
+  --input: #d9d2c0;
+  --ring: #1f1b16;
+}
+
+.dark {
+  /* Light is canonical. Dark defined but unused for now. */
+  --background: #1f1b16;
+  --foreground: #f5f1e8;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-underline-offset: 4px;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11", "calt";
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    font-weight: 380;
+    color: var(--foreground);
+    font-feature-settings: "ss01";
+  }
+
+  p {
+    max-width: 62ch;
+  }
+
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--foreground);
+    outline-offset: 4px;
+  }
+}
+
+/* ---------- Utilities ---------- */
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+@utility eyebrow-terracotta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  font-weight: 500;
+}
+
+@utility display-mega {
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 8.5vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  font-weight: 320;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 30;
+}
+
+@utility display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 340;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 40;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 360;
+  font-variation-settings:
+    "opsz" 100,
+    "SOFT" 50;
+}
+
+@utility display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.125rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 380;
+  font-variation-settings: "opsz" 36;
+}
+
+@utility display-serif {
+  font-family: var(--font-display);
+  font-weight: 360;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 100,
+    "WONK" 1;
+}
+
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility rule-line {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+}
+
+@utility rule-line-fade {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--foreground) 18%,
+    var(--foreground) 82%,
+    transparent
+  );
+  opacity: 0.45;
+}
+
+@utility rule-vert {
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+}
+
+@utility field-grid {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--foreground) 6%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+
+@utility paper-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--foreground) 4%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--foreground) 4%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 96px 96px;
+}
+
+@utility noise {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@utility link-underline {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease-cinema);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(2px);
+  transition:
+    opacity 0.8s var(--ease-cinema),
+    transform 0.8s var(--ease-cinema),
+    filter 0.8s var(--ease-cinema);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* ---------- Buttons ---------- */
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 0.9375rem;
+  font-weight: 450;
+  letter-spacing: -0.005em;
+  border-radius: 999px;
+  border: 1px solid var(--foreground);
+  transition:
+    opacity 0.25s var(--ease-soft),
+    transform 0.25s var(--ease-soft);
+  &:hover {
+    opacity: 0.88;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+@utility btn-terracotta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--terracotta);
+  color: #fbf8ef;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  border-radius: 999px;
+  border: 1px solid var(--terracotta);
+  transition:
+    opacity 0.25s var(--ease-soft),
+    transform 0.25s var(--ease-soft);
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  font-weight: 450;
+  letter-spacing: -0.005em;
+  border-radius: 999px;
+  border: 1px solid var(--foreground);
+  transition: background 0.25s var(--ease-soft);
+  &:hover {
+    background: color-mix(in oklab, var(--foreground) 5%, transparent);
+  }
+}
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  font-weight: 450;
+  letter-spacing: -0.005em;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0.4);
+    transform-origin: left;
+    transition: transform 0.35s var(--ease-cinema);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------- Section frames ---------- */
+
+@utility section-frame {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--border);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Vanguard material system — double-bezel cards, pill eyebrows,
+ * button-in-button CTAs, film grain. All motion on transform/opacity
+ * only, using --ease-spring. Blur is reserved for fixed overlays.
+ * ------------------------------------------------------------------ */
+
+/* Double-bezel: machined outer shell + distinct inner core. */
+.bezel {
+  border-radius: 2rem;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--foreground) 4%, transparent);
+  padding: 0.375rem;
+}
+.bezel-inner {
+  border-radius: calc(2rem - 0.375rem);
+  background: var(--surface);
+  box-shadow: inset 0 1px 1px rgba(251, 248, 239, 0.9);
+  border: 1px solid var(--border);
+}
+
+/* Eyebrow pill badge that precedes major headings. */
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.3rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+/* Button-in-button trailing icon: nested circular wrapper, flush right. */
+.btn-island {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, currentColor 12%, transparent);
+  transition:
+    transform 700ms var(--ease-spring),
+    scale 700ms var(--ease-spring);
+}
+.group:hover .btn-island {
+  transform: translateX(4px) translateY(-1px);
+  scale: 1.05;
+}
+
+/* Film grain — fixed pseudo-element only, never on scrolling content. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* Staggered mask reveal for overlay menus. */
+@keyframes mask-up {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.mask-up {
+  animation: mask-up 700ms var(--ease-spring) both;
+}
+
+/* Scroll entry: heavy fade-up. Applied by Reveal; class here for no-JS parity. */
+.rise {
+  transition:
+    opacity 800ms var(--ease-spring),
+    transform 800ms var(--ease-spring),
+    filter 800ms var(--ease-spring);
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  left: 1rem;
+  top: 0.5rem;
+  transform: translateY(-180%);
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+#main {
+  scroll-margin-top: 7rem;
+}
+dialog::backdrop {
+  background: rgba(31, 27, 22, 0.35);
+}
+@keyframes cabinet-enter {
+  from {
+    transform: translateY(0.5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.cabinet-reveal[data-revealed="true"] {
+  animation: cabinet-enter 360ms ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cabinet-reveal[data-revealed="true"] {
+    animation: none;
+  }
+}
+@media (max-width: 400px) {
+  .btn-island {
+    flex-shrink: 0;
+  }
+}

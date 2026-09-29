@@ -1,0 +1,78 @@
+# Source capture: AI Advisers Privacy Policy
+
+- Live URL: https://aiadvisers.io/privacy.html
+- Retrieved: 29 September 2026 (UTC date of this review)
+- Policy date: Last updated 7 September 2026
+- Retrieval: web page text extraction. Direct HTTP access from the workspace was blocked by socket permissions, so the original response HTML could not be saved. This is the extracted policy text, not an HTML archive.
+
+## Privacy Policy
+
+Last updated 7 September 2026
+
+### Who we are
+
+aiadvisers.io is operated by AI Advisers, a trading name of Kenn Joyce, based in Blackrock, Co. Dublin, Ireland. For the purposes of the EU General Data Protection Regulation (GDPR), Kenn Joyce, trading as AI Advisers, is the data controller for the personal information described in this policy.
+
+You can reach us at kenn.joyce@aiadvisers.io or on +353 (0)86 326 2239. Save the environment — all post by email only, please. For legal correspondence, please phone us for our solicitors’ address.
+
+### The short version
+
+This website does not track you. It sets no cookies, runs no analytics, and stores nothing about you in your browser. The only personal information we ever receive is what you choose to send us in an enquiry.
+
+### Information you give us
+
+The enquiry form on this site asks for your name, company, position, email address, and optionally your phone number and a message.
+
+The form does not send anything to us over the internet. When you submit it, your own email program opens with the details already written into a message addressed to us. Nothing is sent until you press send in your own email program, and the information does not pass through this website or any third party on its way to us. If you change your mind, simply close the message.
+
+We use what you send only to respond to your enquiry and to carry on any business discussion that follows. Our lawful basis is our legitimate interest in responding to people who contact us about our services, and, where a contract follows, the performance of that contract.
+
+### Information collected automatically
+
+We do not run analytics on this site. However, two things happen automatically when any web page loads, and you should know about them:
+
+- Hosting. This site is hosted on GitHub Pages. GitHub records standard server information, including your IP address, when a page is served. See the GitHub Privacy Statement.
+- Fonts. The typefaces used on this site are loaded from Google Fonts, which means Google receives your IP address when the fonts load. See the Google Privacy Policy.
+
+Neither is used by us to identify or profile you, and we do not have access to that data.
+
+### Cookies
+
+This site sets no cookies and uses no browser storage. There is nothing for you to consent to or opt out of.
+
+### How long we keep it
+
+We keep enquiry correspondence for as long as needed to deal with your enquiry and for any ongoing business relationship that follows from it. Where no relationship follows, we delete the correspondence within two years. You can ask us to delete it sooner at any time.
+
+### Who else sees your information
+
+We do not sell your personal information, and we do not share it for advertising. It is shared only with the service providers listed above, each of which acts on our instructions or under its own published terms, and with anyone we are legally required to disclose it to.
+
+### Where your information goes
+
+Some of the providers named above are based in the United States. Where your information is transferred outside the European Economic Area, that transfer relies on the safeguards those providers have put in place, including the EU Standard Contractual Clauses and, where applicable, the EU–US Data Privacy Framework.
+
+### Your rights
+
+Under GDPR you have the right to:
+
+- ask what personal information we hold about you, and get a copy of it;
+- have inaccurate information corrected;
+- have your information deleted;
+- restrict or object to how we use it;
+- receive it in a portable format;
+- withdraw consent at any time, where we relied on consent.
+
+To exercise any of these, email kenn.joyce@aiadvisers.io. We will respond within one month.
+
+If you are not satisfied with our response, you have the right to complain to the Irish Data Protection Commission at dataprotection.ie, or to the supervisory authority in your own EU country.
+
+### Children
+
+This site is aimed at business audiences and is not intended for children. We do not knowingly collect information from anyone under 16.
+
+### Changes to this policy
+
+If we change this policy we will update the date at the top of this page. Material changes will be noted here.
+
+© 2026 AI Advisers. Dublin, Ireland.

@@ -1,0 +1,7 @@
+# Validation
+
+The source website passed TypeScript, lint, production build, three enquiry encoding checks and 78 HTTP/source checks on 29 September 2026. Browser review covered all 14 routes at 390, 768, 1280 and 1440 pixels, navigation/refresh/Back, mobile focus containment and empty-form validation. This is not WCAG certification or product-performance validation.
+
+The exported copy has a self-contained public policy fixture. With a local development server running, use `BASE_URL=http://127.0.0.1:5173 bun run verify` on a POSIX shell. In PowerShell, set `$env:BASE_URL="http://127.0.0.1:5173"`, then run `bun run verify`. The verifier does not run compiler, lint, browser or email delivery tests.
+
+Run `bun scripts/enquiry.test.ts` for the enquiry tests. Native 200% zoom, OS reduced motion, successful email-client handoff, external form delivery and production hosting remain untested.
