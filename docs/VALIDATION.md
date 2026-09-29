@@ -4,4 +4,6 @@ The source website passed TypeScript, lint, production build, three enquiry enco
 
 The exported copy has a self-contained public policy fixture. With a local development server running, use `BASE_URL=http://127.0.0.1:5173 bun run verify` on a POSIX shell. In PowerShell, set `$env:BASE_URL="http://127.0.0.1:5173"`, then run `bun run verify`. The verifier does not run compiler, lint, browser or email delivery tests.
 
+The standalone export was also checked after a frozen dependency installation: TypeScript, lint, production build, three enquiry checks and all 78 HTTP/source checks passed. HTTP checks used the existing matching local website preview; no duplicate preview server or external submission was created.
+
 Run `bun scripts/enquiry.test.ts` for the enquiry tests. Native 200% zoom, OS reduced motion, successful email-client handoff, external form delivery and production hosting remain untested.
