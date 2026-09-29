@@ -12,7 +12,7 @@ Parchment surfaces, dark ink, terracotta accents and serif headings retain the C
 - Package manifest, frozen Bun lockfile and build/tooling configuration.
 - Version overview, change notes and contribution instructions.
 - Standalone enquiry tests and a public company-policy fixture for source comparison.
-- A validation workflow for TypeScript, lint, build and enquiry tests; no automatic deployment.
+- A validation workflow template for TypeScript, lint, build and enquiry tests; no automatic deployment.
 
 ## Run locally
 
