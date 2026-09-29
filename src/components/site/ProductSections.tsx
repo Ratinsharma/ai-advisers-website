@@ -59,8 +59,8 @@ export function ProductHero({
             <Cta to={PRODUCT_ENQUIRY} external variant="terracotta">
               Book a demonstration
             </Cta>
-            <Cta to={PRODUCT_ENQUIRY} external variant="secondary">
-              Try it on one policy
+            <Cta to="/contact" variant="secondary">
+              Request a call
             </Cta>
             {secondary && (
               <Cta to="/live-trainer" variant="text">
@@ -70,6 +70,10 @@ export function ProductHero({
           </div>
           <p className="mt-4 text-sm text-[var(--muted-foreground)]">
             Built from your policies. Reviewed by you. In 32 languages.
+          </p>
+          <p className="mt-2 max-w-[62ch] text-xs leading-relaxed text-[var(--muted-foreground)]">
+            Demonstration requests open the iMe enquiry form. Prefer a conversation? Request a call
+            with Kenn about your team, subject and rollout.
           </p>
         </div>
         {sample && (

@@ -8,14 +8,17 @@ export function Footer() {
           <div>
             <p className="mono-label text-[var(--terracotta)]">iMe · A product of AI Advisers</p>
             <h2 className="font-display mt-5 max-w-[20ch] text-3xl sm:text-4xl">
-              Start with a demonstration.
+              Find the right starting point.
             </h2>
             <p className="mt-5 max-w-[44ch] leading-relaxed text-[var(--muted-foreground)]">
-              See how a tutor built around your policies could support your people.
+              See iMe in action, or speak with Kenn about the training or service your team needs.
             </p>
             <a href="https://ime.ceo/trainer.html#enquire" className="btn-primary mt-6">
               Book a demonstration ↗
             </a>
+            <Link to="/contact" className="mt-4 block w-fit link-underline">
+              Request a call with Kenn →
+            </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             <FooterCol

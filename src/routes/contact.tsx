@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead({
       path: "/contact",
-      title: "Company enquiries — AI Advisers",
+      title: "Request a call — AI Advisers",
       description:
         "Contact Kenn Joyce, Founder & Principal of AI Advisers, in Blackrock, Dublin. Prepare an enquiry in your own email program.",
     }),
@@ -36,14 +36,15 @@ function Contact() {
   return (
     <>
       <PageHero
-        eyebrow="Company enquiries"
+        eyebrow="Speak with Kenn Joyce"
         eyebrowTone="terracotta"
         title={
           <>
-            Begin a <span className="italic text-[var(--muted-foreground)]">conversation.</span>
+            Let’s talk about{" "}
+            <span className="italic text-[var(--muted-foreground)]">your team.</span>
           </>
         }
-        lead="Discuss advisory, executive communications, private AI or studio production with AI Advisers."
+        lead="Request a call about iMe training, EU AI Act literacy, onboarding or our advisory and production services. Tell Kenn what you need and suggest a time to speak."
       />
       <SectionShell className="border-b border-[var(--border)] !py-16 sm:!py-24">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
@@ -67,7 +68,8 @@ function Contact() {
             <div className="mt-10 border-t border-[var(--border)] pt-6">
               <h2 className="font-display text-2xl">Looking for iMe training?</h2>
               <p className="mt-4 max-w-[42ch] leading-relaxed text-[var(--muted-foreground)]">
-                Book your trainer demonstration through the existing iMe enquiry form.
+                Request a trainer demonstration through the existing iMe enquiry form. The team will
+                arrange the next step with you.
               </p>
               <a href="https://ime.ceo/trainer.html#enquire" className="btn-primary mt-5">
                 Book a demonstration ↗
@@ -81,7 +83,7 @@ function Contact() {
           </div>
           <div className="bezel">
             <div className="bezel-inner p-6 sm:p-9">
-              <h2 className="font-display text-2xl">Prepare your enquiry</h2>
+              <h2 className="font-display text-2xl">Request a call or send an enquiry</h2>
               <p
                 id="email-handoff"
                 className="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]"
@@ -122,6 +124,7 @@ function Contact() {
                     id="message"
                     name="message"
                     rows={5}
+                    placeholder="What would you like to discuss? For a call, suggest a couple of suitable times and your time zone."
                     className="mt-2 block w-full resize-y rounded-sm border border-[var(--border-strong)] bg-[var(--background)] px-4 py-3 text-base"
                   />
                 </div>
@@ -133,7 +136,8 @@ function Contact() {
                   <a href="/privacy" className="link-underline">
                     company privacy policy
                   </a>{" "}
-                  for how enquiry correspondence is handled.
+                  for how enquiry correspondence is handled. A call time is agreed by
+                  correspondence; this form does not reserve a calendar slot.
                 </p>
               </form>
               <div role="status" aria-live="polite">

@@ -174,7 +174,7 @@ export function Header() {
             onClick={() => setOpen(false)}
             className="link-underline justify-self-start"
           >
-            Company enquiries
+            Request a call with Kenn
           </Link>
         </nav>
       </dialog>
